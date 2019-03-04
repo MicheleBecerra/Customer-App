@@ -10,14 +10,13 @@ const CustomerListItem = ({customers}) => {
                 {
                     customers.map( c => 
                         <CustomerListItem>
-                            ey={c.curp}
+                            key={c.curp}
                             name{c.name}
                             aditAction={'Editar'}
                             delAction={'Eliminar'}
                             urlPath={urlPath}
                         </CustomerListItem>)
                 }
-
             </div>
         </div>
     );

@@ -1,24 +1,28 @@
 import React, { Component } from 'react';
-import { Switch, Route, BrowserRouter as Router} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import HomeContainer  from './containers/HomeContainer';
 import './App.css';
+import CustomersContainer from './containers/CustomersContainer';
 
 class App extends Component {
   
-  renderHome = () => <h1>HOME ... </h1>
-  renderCustomerContainer = () => <h2>Customer Container </h2>
-  renderCustomerListContainer = () => <h2>Customer List Container </h2> 
-  renderCustomerNewContainer = () => <h2>Customer  New Container </h2>
+  renderHome = () => <HomeContainer/> ;
+  renderCustomerContainer = () => <h2> Customer Container </h2> ;
+  renderCustomerListContainer = () => <CustomersContainer/> ;
+  renderCustomerNewContainer = () => <h2>Customer  New Container </h2> ;
 
+  //Se usa el componente switch par hacer un wrapper de las dos rutas quue tienen conflicto. Resuelve la ruta más especíica primero.
   render() {
     return (
       <Router>
-        <div>
-          <Route exact path="/" component={HomeContainer}/>
+        <div className="App">
+        
+          <Route exact path="/" component={this.renderHome}/>
           <Route exact path="/customers" component = {this.renderCustomerListContainer} />
+ 
           <Switch>
           <Route  path="/customers/new" component = {this.renderCustomerNewContainer} />
-          <Route  path="/customer/:curp" component = {this.renderCustomerContainer} />
+          <Route  path="/customers/:curp" component = {this.renderCustomerContainer} />
           </Switch>
         </div>
       </Router>

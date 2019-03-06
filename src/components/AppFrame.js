@@ -4,12 +4,12 @@ import AppHeader from './AppHeader';
 
 //Contendor que nos serira para no replicar codigo
 
-const AppFrame = ({header, body, footer}) => {
+const AppFrame = ({header, body }) => {
     return (
         <div>
             <div className="app-frame">
-                <AppHeader>{header}</AppHeader>
-                <div>{body}</div>
+                <AppHeader title={ header }></AppHeader>
+                <div>{ body }</div>
                 <div>{ 'Aplicacion de Ejemplo' }</div>
 
             </div>
@@ -21,8 +21,6 @@ const AppFrame = ({header, body, footer}) => {
 AppFrame.propTypes = {
     header: PropTypes.string.isRequired,
     body: PropTypes.element.isRequired,
-
-
 };
 
 export default AppFrame;

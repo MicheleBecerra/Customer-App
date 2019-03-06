@@ -20,3 +20,12 @@ body {
   height: 30px;
   margin: 5px;
 }
+.customers-actions button {
+  background: white;
+  min-width: 100px;
+  height: 30px;
+  margin: 5px;
+  border-style: none;
+  border-radius: 3px;
+  font-weight: bolder;
+}
